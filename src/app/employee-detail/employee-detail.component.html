@@ -1,0 +1,33 @@
+<div *ngIf="employeeData.data">
+  <a class="btn btn-primary" routerLink="/employees-list">Back</a>
+  <h1>{{employeeData.data.first_name}}</h1>
+  <div class="row">
+    <div class="col-sm-3">
+        <div class="card">
+          <img [src]="employeeData.data.avatar" [attr.alt]="employeeData.data.first_name">
+          <div class="card-body">
+            <p class="card-text">{{employeeData.data.first_name}} {{employeeData.data.last_name}}</p>
+          </div>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <div class="card">
+          <div class="card-body">
+            <h5>Details</h5>
+            <div class="card-text">
+              <p><span class="fw-bold">First Name: </span>{{employeeData.data.first_name}} </p>
+              <p><span class="fw-bold">Last Name: </span>{{employeeData.data.last_name}}</p>
+              <p><span class="fw-bold">Email Address: </span>{{employeeData.data.email}}</p>
+            </div>
+            <h5>Resource</h5>
+            <div class="card-text" *ngIf="employeeResourceData.data">
+              <p><span class="fw-bold">Name: </span>{{employeeResourceData.data.name}} </p>
+              <p><span class="fw-bold">Year: </span>{{employeeResourceData.data.year}}</p>
+              <p><span class="fw-bold">Color: </span>{{employeeResourceData.data.color}}</p>
+              <p><span class="fw-bold">Pantone Value: </span>{{employeeResourceData.data.pantone_value}}</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
